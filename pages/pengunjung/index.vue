@@ -51,7 +51,7 @@
                 </div>
               </div>
               <div class="mb-3">
-                <select v-model="form.keperluan"class="form-control form-control-lg from-select rounded-5">
+                <select v-model="form.keperluan" class="form-control form-control-lg from-select rounded-5">
               <option value="">KEPERLUAN</option>
               <option v-for="(item,i) in objectives" :key="i" :value="item.id">{{ item.nama }}</option>
             </select>

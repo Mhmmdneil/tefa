@@ -7,15 +7,16 @@
           <div class="my-3">
             <input type="search" class="form-control form-control-lg rounded-5" placeholder="Filter...">
           </div>
-          <div class="my-3 text-muted">menampilkan 1 dari 1</div>
+          <div class="my-3 text-muted"></div>
           <table class="table">
             <thead>
               <tr>
-                <td>#</td>
+                <td>No</td>
                 <td>NAMA</td>
                 <td>KEANGGOTAAN</td>
-                <td>WAKTU</td>
+                <td>KELAS</td>
                 <td>KEPERLUAN</td>
+                <td>WAKTU</td>
               </tr>
             </thead>
             <tbody>
@@ -25,8 +26,7 @@
                 <td>{{ visitors.keanggotaan.nama }}</td>
                 <td>{{ visitors.tingkat}}-{{ visitors.jurusan }}{{ visitors.kelas }}</td>
                 <td>{{ visitors.keperluan.nama }}</td>
-                <td>{{ visitors.tanggal }}</td>
-                <td>{{ visitors.jam?.split(".")[0] }} </td>
+                <td>{{ visitors.tanggal }}{{ visitors.jam?.split(".")[0] }} </td>
               </tr>
             </tbody>
           </table>

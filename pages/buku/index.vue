@@ -7,7 +7,7 @@
         <div class="my-3">
           <input type="search" class="form-container rounded-5"  width="150px"     placeholder="Search">
         </div>
-        <div class="my-3 text-muted">menampilkan 3 dari 3</div>
+        <div class="my-3 text-muted"></div>
         <div class="row">
           <div class="col-lg-2" v-for="(buku, i) in books " :key="i">
             <div class="card mb-3 mt-4">
