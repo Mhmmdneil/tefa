@@ -12,7 +12,9 @@
           <div class="col-lg-2" v-for="(buku, i) in books " :key="i">
             <div class="card mb-3 mt-4">
               <div class="card-body">
+                <nuxt-link :to="`/buku/${buku.id}`">
                 <img :src="buku.cover" class="cover" :alt="buku.judul">
+              </nuxt-link>
               </div>
             </div>
           </div>
