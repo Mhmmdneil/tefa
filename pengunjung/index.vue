@@ -9,16 +9,16 @@
             <form @submit.prevent="KirimData">
               <div class="mb-3">
                 <input v-model="form.nama" type="text" class="form-control form-control-lg rounded-5"
-                  placeholder="NAMA...">
+                  placeholder="NAMA..." required/>
               </div>
               <div class="mb-3">
-                <select v-model="form.keanggotaan" class="form-control form-control-lg from-select rounded-5">
+                <select v-model="form.keanggotaan" @change="resetkelas" class="form-control form-control-lg from-select rounded-5">
                   <option value="">KEANGGOTAAN</option>
                   <option v-for="(member, i) in members" :key="i" :value="member.id">{{ member.nama }}</option>
 
                 </select>
               </div>
-              <div v-if="form.keanggotaan == '1'" class="row mb-3">
+              <div class="row mb-3" v-if="form.keanggotaan == '1'" >
                 <div class="col-md-4">
                   <select v-model="form.tingkat" class="form-control form-control-lg form-select rounded-5 mb-2">
                     <option value="">TINGKATAN</option>
@@ -96,6 +96,14 @@ const getKeanggotaan = async () => {
 const getKeperluan = async () => {
   const { data, error } = await supabase.from('keperluan').select('*')
   if (data) objectives.value = data
+}
+
+const resetkelas = e => {
+  if(e.target.value === '2' || '3' || '4'){
+    form.value.tingkat = ''
+    form.value.jurusan = ''
+    form.value.kelas = ''
+  }
 }
 
 onMounted(() => {
